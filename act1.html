@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: monospace;
+            font-size: 20px;
+        }
+
+        .json1 {
+            background-color: lightblue;
+            border: 2px solid;
+            padding: 1rem 1.2rem;
+            max-width: fit-content;
+        }
+
+        .json2 {
+            background-color: lightgreen;
+            border: 2px solid;
+            padding: 1rem 1.2rem;
+            max-width: fit-content;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>What is JSON ?</h1>
+    <p id="demo1"></p>
+    <button onclick="jsonStringify(event)">Stringify</button>
+
+    <p id="demo2"></p>
+    <button onclick="jsonParse(event)">Parse</button>
+
+    <script>
+
+        let obj = { name: "John", age: 30, city: "New York" };
+
+        function jsonStringify(event) {
+            document.getElementById("demo1").innerHTML = JSON.stringify(obj);
+            document.getElementById("demo1").classList.add("json1");
+        }
+
+        function jsonParse(event) {
+            let str = '{"name" : "John", "age" : 30, "city" : "New York"}'
+            let parsed = JSON.parse(str);
+            document.getElementById("demo2").innerHTML =
+                "Name: " + parsed.name + "<br>" +
+                "Age: " + parsed.age + "<br>" +
+                "City: " + parsed.city;
+
+            document.getElementById("demo2").classList.add("json2");
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>
