@@ -45,7 +45,7 @@
         }
 
         function jsonParse(event) {
-            let str = '{"name" : "John", "age" : 30, "city" : "New York"}'
+            let str = JSON.stringify(obj);
             let parsed = JSON.parse(str);
             document.getElementById("demo2").innerHTML =
                 "Name: " + parsed.name + "<br>" +
