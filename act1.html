@@ -40,11 +40,13 @@
         let obj = { name: "John", age: 30, city: "New York" };
 
         function jsonStringify(event) {
+            event.preventDefault();
             document.getElementById("demo1").innerHTML = JSON.stringify(obj);
             document.getElementById("demo1").classList.add("json1");
         }
 
         function jsonParse(event) {
+            event.preventDefault();
             let str = JSON.stringify(obj);
             let parsed = JSON.parse(str);
             document.getElementById("demo2").innerHTML =
